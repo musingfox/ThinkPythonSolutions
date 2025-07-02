@@ -80,6 +80,8 @@ jupyter notebook
 - 📚 [Python 官方教學（中文）](https://docs.python.org/zh-tw/3/tutorial/)
 - 💬 [Python Taiwan 社群](https://www.facebook.com/groups/pythontw/)
 - 🎓 [詳細學習指南](學習指南.md)
+- 💻 [IDE 使用指南](IDE使用指南.md)
+- 🔧 [環境問題修復](修復環境.md)
 
 ## 🤝 貢獻
 

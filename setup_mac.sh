@@ -63,15 +63,41 @@ echo ""
 echo "✅ 環境建立完成！"
 
 echo ""
-echo "🎉 安裝完成！"
+echo "🎉 環境安裝完成！"
 echo ""
-echo "📋 下一步操作："
-echo "1. 啟動 Jupyter Notebook："
-echo "   uv run jupyter notebook"
+echo "🎯 選擇學習方式："
+echo "1) 使用瀏覽器 Jupyter Notebook（推薦初學者）"
+echo "2) 安裝 IDE（VSCode、Cursor 等）"
+echo "3) 兩者都設置"
 echo ""
-echo "2. 瀏覽器會自動開啟 Jupyter 介面"
-echo "3. 點選 'soln' 資料夾開始學習"
-echo "4. 開始你的第一個練習：chap01.ipynb"
+
+read -p "請輸入選項 (1-3): " learning_choice
+
+case $learning_choice in
+    1|3)
+        echo ""
+        echo "📋 Jupyter Notebook 使用方式："
+        echo "1. 啟動 Jupyter：uv run jupyter notebook"
+        echo "2. 瀏覽器會自動開啟 Jupyter 介面"
+        echo "3. 點選 'soln' 資料夾開始學習"
+        echo "4. 開始第一個練習：chap01.ipynb"
+        echo ""
+        ;;
+esac
+
+case $learning_choice in
+    2|3)
+        echo ""
+        echo "💻 是否要安裝 IDE？ (y/n)"
+        read -p "" install_ide
+        if [[ $install_ide == "y" ]] || [[ $install_ide == "Y" ]]; then
+            ./setup_ide.sh
+        else
+            echo "💡 你可以稍後執行 './setup_ide.sh' 來安裝 IDE"
+        fi
+        ;;
+esac
+
 echo ""
 echo "💡 uv 使用小技巧："
 echo "- 啟動 Jupyter：uv run jupyter notebook"
@@ -86,6 +112,10 @@ echo "- 🔒 自動管理依賴衝突"
 echo "- 🐍 自動安裝 Python 版本"
 echo "- 📦 統一的專案管理"
 echo ""
-echo "📖 如果遇到問題，請參考 '學習指南.md' 檔案"
+echo "📚 更多資源："
+echo "- 📖 學習指南：學習指南.md"
+echo "- 💻 IDE 設定：IDE使用指南.md"
+echo "- 🔧 問題解決：修復環境.md"
+echo "- 🚀 快速開始：快速開始.md"
 echo ""
 echo "🚀 現在就開始你的 Python 學習之旅吧！"

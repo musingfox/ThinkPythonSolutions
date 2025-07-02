@@ -1,0 +1,30 @@
+{
+    "python.defaultInterpreterPath": "./.venv/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "jupyter.askForKernelRestart": false,
+    "jupyter.alwaysTrustNotebooks": true,
+    "files.associations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "python.formatting.provider": "black",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "jupyter.interactiveWindow.creationMode": "perFile",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": false
+    }
+}

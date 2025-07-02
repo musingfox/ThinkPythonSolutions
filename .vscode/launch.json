@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: 當前檔案",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {},
+            "python": "${workspaceFolder}/.venv/bin/python"
+        },
+        {
+            "name": "Python: 當前檔案 (外部終端)",
+            "type": "debugpy", 
+            "request": "launch",
+            "program": "${file}",
+            "console": "externalTerminal",
+            "cwd": "${workspaceFolder}",
+            "python": "${workspaceFolder}/.venv/bin/python"
+        },
+        {
+            "name": "Python: 模組",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "enter-your-module-name",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "python": "${workspaceFolder}/.venv/bin/python"
+        }
+    ]
+}

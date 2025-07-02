@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "ms-python.debugpy",
+        "ms-toolsai.jupyter",
+        "ms-python.black-formatter",
+        "ms-python.flake8",
+        "ms-python.isort",
+        "njpwerner.autodocstring",
+        "aaron-bond.better-comments",
+        "usernamehw.errorlens",
+        "bradlc.vscode-tailwindcss",
+        "ms-vscode.vscode-json"
+    ]
+}
