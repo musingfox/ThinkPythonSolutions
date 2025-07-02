@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "🐍 Think Python 繁體中文版環境設置腳本"
+echo "使用 uv - 現代化 Python 包管理工具"
 echo "======================================"
 echo ""
 
@@ -28,52 +29,62 @@ else
     echo "✅ Homebrew 已安裝"
 fi
 
-# 檢查 Python3
+# 安裝 uv
 echo ""
-echo "🐍 檢查 Python 3..."
-if ! command -v python3 &> /dev/null; then
-    echo "📦 安裝 Python 3..."
-    brew install python
+echo "⚡ 安裝 uv - 現代化 Python 包管理工具..."
+if ! command -v uv &> /dev/null; then
+    brew install uv
+    echo "✅ uv 安裝成功"
 else
-    echo "✅ Python 3 已安裝: $(python3 --version)"
+    echo "✅ uv 已安裝: $(uv --version)"
 fi
 
-# 檢查 pip3
+# 建立專案並安裝依賴
 echo ""
-echo "📦 檢查 pip3..."
-if ! command -v pip3 &> /dev/null; then
-    echo "❌ pip3 未找到，請重新安裝 Python"
-    exit 1
-else
-    echo "✅ pip3 已安裝"
+echo "📚 使用 uv 建立 Python 專案環境..."
+
+# 初始化專案（如果 pyproject.toml 不存在）
+if [ ! -f "pyproject.toml" ]; then
+    uv init --no-readme --python 3.11
+    echo "✅ 專案初始化完成"
 fi
 
-# 安裝 Jupyter
+# 安裝 Jupyter 和常用套件
 echo ""
-echo "📓 安裝 Jupyter Notebook..."
-pip3 install --user jupyter notebook ipython
+echo "📦 安裝 Jupyter 和學習所需套件..."
+uv add jupyter matplotlib pandas numpy requests beautifulsoup4 ipykernel
 
-# 檢查安裝是否成功
-if command -v jupyter &> /dev/null; then
-    echo "✅ Jupyter Notebook 安裝成功"
-else
-    echo "⚠️  Jupyter 可能安裝在用戶目錄，請將以下路徑加入 PATH："
-    echo "   export PATH=\"\$HOME/Library/Python/3.*/bin:\$PATH\""
-    echo "   或重新啟動終端機"
-fi
-
-# 安裝常用的 Python 套件
+# 安裝專案依賴
 echo ""
-echo "📚 安裝常用的 Python 套件..."
-pip3 install --user matplotlib pandas numpy requests beautifulsoup4
+echo "🔄 同步專案環境..."
+uv sync
+
+echo ""
+echo "✅ 環境建立完成！"
 
 echo ""
 echo "🎉 安裝完成！"
 echo ""
 echo "📋 下一步操作："
-echo "1. 在終端機中輸入 'jupyter notebook' 啟動 Jupyter"
+echo "1. 啟動 Jupyter Notebook："
+echo "   uv run jupyter notebook"
+echo ""
 echo "2. 瀏覽器會自動開啟 Jupyter 介面"
 echo "3. 點選 'soln' 資料夾開始學習"
+echo "4. 開始你的第一個練習：chap01.ipynb"
+echo ""
+echo "💡 uv 使用小技巧："
+echo "- 啟動 Jupyter：uv run jupyter notebook"
+echo "- 執行 Python 腳本：uv run python script.py"
+echo "- 安裝新套件：uv add 套件名稱"
+echo "- 查看已安裝套件：uv tree"
+echo "- 進入虛擬環境 shell：uv shell"
+echo ""
+echo "🌟 uv 的優勢："
+echo "- ⚡ 極快的安裝速度"
+echo "- 🔒 自動管理依賴衝突"
+echo "- 🐍 自動安裝 Python 版本"
+echo "- 📦 統一的專案管理"
 echo ""
 echo "📖 如果遇到問題，請參考 '學習指南.md' 檔案"
 echo ""

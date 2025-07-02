@@ -1,0 +1,38 @@
+[project]
+name = "think-python-solutions"
+version = "1.0.0"
+description = "Think Python 3e 練習解答集 - 繁體中文版"
+readme = "README.md"
+license = {text = "CC BY-NC-SA 4.0"}
+authors = [
+    {name = "Allen B. Downey", email = "allen@allendowney.com"},
+    {name = "Traditional Chinese Translation Team"}
+]
+requires-python = ">=3.11"
+dependencies = [
+    "jupyter>=1.0.0",
+    "matplotlib>=3.5.0",
+    "pandas>=2.0.0", 
+    "numpy>=1.21.0",
+    "requests>=2.25.0",
+    "beautifulsoup4>=4.9.0",
+    "ipykernel>=6.0.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/musingfox/ThinkPythonSolutions"
+Repository = "https://github.com/musingfox/ThinkPythonSolutions.git"
+"Original Book" = "https://allendowney.github.io/ThinkPython"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "black>=22.0.0",
+    "ruff>=0.1.0"
+]
